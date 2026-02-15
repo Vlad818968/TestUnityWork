@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138403897835186684}
-  - component: {fileID: 3124986393091855627}
   - component: {fileID: 4479028756302753818}
+  - component: {fileID: 2286476843493658725}
+  - component: {fileID: 8518752862382999447}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -30,44 +31,18 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 165874593182800742}
-  - {fileID: 847306529762867796}
-  - {fileID: 1037879804810839203}
-  - {fileID: 2194634442848238392}
   - {fileID: 8291186891230971927}
+  - {fileID: 2194634442848238392}
+  - {fileID: 1037879804810839203}
+  - {fileID: 847306529762867796}
+  - {fileID: 165874593182800742}
   m_Father: {fileID: 3992779027759073396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 380}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &3124986393091855627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821968976254984900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 10
-    m_Bottom: 10
-  m_ChildAlignment: 1
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &4479028756302753818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +57,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &2286476843493658725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821968976254984900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 10
+    m_Bottom: 10
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 180, y: 180}
+  m_Spacing: {x: 0, y: 10}
+  m_Constraint: 1
+  m_ConstraintCount: 1
+--- !u!114 &8518752862382999447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821968976254984900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43097f81516aba740a779d6cb64e330a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VerticalLoopScroll
+  _position: 0
 --- !u!1 &2830010692858549259
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,12 +628,12 @@ PrefabInstance:
     - target: {fileID: 281772486175071792, guid: 2b36359fc0a6ccd45b4a34654cda0831,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 281772486175071792, guid: 2b36359fc0a6ccd45b4a34654cda0831,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 281772486175071792, guid: 2b36359fc0a6ccd45b4a34654cda0831,
         type: 3}
@@ -740,12 +752,12 @@ PrefabInstance:
     - target: {fileID: 1621731070947014383, guid: 57ff48e41f03f534eb3f6f70a8660bf7,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1621731070947014383, guid: 57ff48e41f03f534eb3f6f70a8660bf7,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1621731070947014383, guid: 57ff48e41f03f534eb3f6f70a8660bf7,
         type: 3}
@@ -864,12 +876,12 @@ PrefabInstance:
     - target: {fileID: 5207689385554029698, guid: f535d3b2ca4a7254c92f7823618d0dc0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5207689385554029698, guid: f535d3b2ca4a7254c92f7823618d0dc0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5207689385554029698, guid: f535d3b2ca4a7254c92f7823618d0dc0,
         type: 3}
@@ -1251,12 +1263,12 @@ PrefabInstance:
     - target: {fileID: 8253794043993687505, guid: f2cb11ef93097984291ea7218cfbf082,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8253794043993687505, guid: f2cb11ef93097984291ea7218cfbf082,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8253794043993687505, guid: f2cb11ef93097984291ea7218cfbf082,
         type: 3}
@@ -1375,12 +1387,12 @@ PrefabInstance:
     - target: {fileID: 7089174683175592313, guid: b7aeabb9ca4fc5e449281f8619345314,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7089174683175592313, guid: b7aeabb9ca4fc5e449281f8619345314,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7089174683175592313, guid: b7aeabb9ca4fc5e449281f8619345314,
         type: 3}
