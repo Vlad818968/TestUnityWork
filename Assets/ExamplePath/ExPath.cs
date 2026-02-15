@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 namespace ExamplePath
 {
-    
-    
-    
     public class ExPath : MonoBehaviourExt
     {
         [SerializeField] private float timeAnim = 1f;
@@ -22,7 +19,6 @@ namespace ExamplePath
         private float repeatCount = 0;
         private string cacheString = null;
 
-        
         [OnStart]
         private void StartThis()
         {

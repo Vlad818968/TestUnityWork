@@ -80,8 +80,8 @@ namespace AxGrid.Tools.Binders{
 				key = Model.GetString(keyField, key);
 				Model.EventManager.AddAction($"On{keyField}Changed", OnKeyChanged);
 			}
+
 			OnItemEnable();
-			
 		}
 
 		public void OnKeyChanged()

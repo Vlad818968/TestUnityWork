@@ -3,16 +3,17 @@ using AxGrid.Base;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
+using AxGrid.Path;
+using System;
+using AxGrid.FSM;
+using AxGrid;
 
 [RequireComponent(typeof(GridLayoutGroup))]
 [RequireComponent(typeof(RectTransform))]
 public class VerticalLoopScroll : MonoBehaviourExt
 {
-    public float Position
-    {
-        get => _position;
-        set => SetPosition(value);
-    }
+    [SerializeField] private float _acelerationTime;
+    [SerializeField] private float _scrollSpeed;
 
     private float _position;
     private float _cellSize;
@@ -31,6 +32,55 @@ public class VerticalLoopScroll : MonoBehaviourExt
         _cellSize = layoutGroup.cellSize.y + layoutGroup.padding.top;
         MoveToFirst(_items.Last());
         _content.AnchoredPositionSetY(_cellSize);
+    }
+
+    [OnStart]
+    public void AddActions()
+    {
+        Model.EventManager.AddAction("OnIsScrollingChanged", IsScrolling);
+    }
+
+    private void IsScrolling()
+    {
+        if (Model.GetBool("IsScrolling"))
+        {
+            StartScroll();
+        }
+        else
+        {
+            StopScroll();
+        }
+    }
+
+    private void StartScroll()
+    {
+        Path = new CPath()
+            .EasingLinear(_acelerationTime, 0f, _scrollSpeed, (f) =>
+            {
+                SetPosition(_position + Time.deltaTime * f);
+            })
+            .Add(() =>
+            {
+                SetPosition(_position + Time.deltaTime * _scrollSpeed);
+                return Status.Continue;
+            });
+    }
+
+    private void StopScroll()
+    {
+        var stopPosition = (float)Math.Ceiling(_position);
+        Path = new CPath()
+            .Add(() =>
+            {
+                SetPosition(Mathf.MoveTowards(_position, stopPosition, Time.deltaTime * _scrollSpeed));
+                if (_position == stopPosition)
+                {
+                    Settings.Fsm?.Invoke("OnScrollEnded");
+                    return Status.OK;
+                }
+
+                return Status.Continue;
+            });
     }
 
     private void SetPosition(float newPosition)
