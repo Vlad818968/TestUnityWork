@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using AxGrid.Path;
 using System;
-using AxGrid.FSM;
 using AxGrid;
 
 [RequireComponent(typeof(GridLayoutGroup))]
@@ -14,6 +13,9 @@ public class VerticalLoopScroll : MonoBehaviourExt
 {
     [SerializeField] private float _acelerationTime;
     [SerializeField] private float _scrollSpeed;
+
+    [Space]
+    [SerializeField] private RectTransform _winEffectContainer;
 
     private float _position;
     private float _cellSize;
@@ -76,6 +78,8 @@ public class VerticalLoopScroll : MonoBehaviourExt
                 if (_position == stopPosition)
                 {
                     Settings.Fsm?.Invoke("OnScrollEnded");
+                    Model?.EventManager.Invoke("SoundPlay", "RouletteWin");
+                    Model?.EventManager.Invoke("CreateEffect", "CollectCoinEffect", _winEffectContainer);
                     return Status.OK;
                 }
 
@@ -89,6 +93,7 @@ public class VerticalLoopScroll : MonoBehaviourExt
         for (int i = 0; i < steps; i++)
         {
             MoveToFirst(_items.Last());
+            Model?.EventManager.Invoke("SoundPlay", "RollingClick");
         }
 
         _content.AnchoredPositionSetY(Mathf.Lerp(_cellSize, 0, newPosition % 1f));

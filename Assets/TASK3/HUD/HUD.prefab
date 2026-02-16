@@ -95,6 +95,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VerticalLoopScroll
   _acelerationTime: 2
   _scrollSpeed: 8
+  _winEffectContainer: {fileID: 3714391884206366998}
+--- !u!1 &2129811393999564187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3714391884206366998}
+  m_Layer: 5
+  m_Name: WinEffectContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3714391884206366998
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129811393999564187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3992779027759073396}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2830010692858549259
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +163,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 138403897835186684}
+  - {fileID: 3714391884206366998}
   m_Father: {fileID: 8029470005150469720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -534,7 +571,7 @@ Canvas:
   m_GameObject: {fileID: 8361781910510487341}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -978,6 +1015,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StopBtn
       objectReference: {fileID: 0}
+    - target: {fileID: 7391154608700311078, guid: fa99d27b317b90f41969e4287dfcdf69,
+        type: 3}
+      propertyPath: _enableField
+      value: StopBtnEnable
+      objectReference: {fileID: 0}
     - target: {fileID: 8347043514456507893, guid: fa99d27b317b90f41969e4287dfcdf69,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1131,6 +1173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StartBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 785376269150472465, guid: 5d4380ba31293714b92fa557afa9d013,
+        type: 3}
+      propertyPath: _enableField
+      value: StartBtnEnable
       objectReference: {fileID: 0}
     - target: {fileID: 2279445524719733442, guid: 5d4380ba31293714b92fa557afa9d013,
         type: 3}
